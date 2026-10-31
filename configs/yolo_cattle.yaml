@@ -1,0 +1,51 @@
+# YOLOv11 Training Configuration — Cattle Detection
+# Author: Sreenivasulu Reddy Settipalli, TAMU
+
+# Dataset
+path: ./data
+train: images/train
+val: images/val
+test: images/test
+
+nc: 3
+names:
+  0: cattle
+  1: calf
+  2: bull
+
+# Training hyperparameters
+epochs: 150
+batch: 16
+imgsz: 640
+device: 0          # GPU id; use 'cpu' for CPU
+workers: 8
+patience: 30       # Early stopping
+
+optimizer: AdamW
+lr0: 0.001
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+
+# Augmentation
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+degrees: 5.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+mosaic: 1.0
+mixup: 0.2
+copy_paste: 0.3
+
+# Model
+model: yolo11l.pt   # Start from YOLO11-large pretrained
+project: runs/train
+name: cattle_yolo11

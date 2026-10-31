@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+*.pt
+*.pth
+*.onnx
+weights/
+runs/
+data/images/
+data/labels/
+results/*.mp4
+results/*.avi
+.ipynb_checkpoints/
+*.DS_Store
